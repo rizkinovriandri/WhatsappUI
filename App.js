@@ -14,6 +14,7 @@ import { TabView, TabBar, SceneMap } from 'react-native-tab-view';
 import Chats from './pages/Chats';
 import Status from './pages/Status';
 import Calls from './pages/Calls';
+import Api from './pages/Api';
 
 const FirstRoute = () => (
   <View style={[styles.scene, { backgroundColor: 'white' }]}>
@@ -33,6 +34,12 @@ const ThirdRoute = () => (
 </View>
 );
 
+const FourthRoute = () => (
+  <View style={[styles.scene, { backgroundColor: 'white' }]}>
+    <Api/>
+</View>
+);
+
 const initialLayout = { width: Dimensions.get('window').width };
 
 
@@ -46,12 +53,14 @@ const App = () => {
     { key: 'first', title: 'Chat' },
     { key: 'second', title: 'Status' },
     { key: 'third', title: 'Calls' },
+    { key: 'fourth', title: 'Test' },
   ]);
 
   const renderScene = SceneMap({
     first: FirstRoute,
     second: SecondRoute,
     third: ThirdRoute,
+    fourth: FourthRoute,
   });
 
   const renderTabBar = props => (
